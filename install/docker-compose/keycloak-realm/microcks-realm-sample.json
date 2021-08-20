@@ -87,7 +87,7 @@
         "+"
       ],
       "redirectUris": [
-        "https://ec2-18-183-254-98.ap-northeast-1.compute.amazonaws.com:8080/*"
+        "http://localhost:8080/*"
       ],
       "fullScopeAllowed": false
     },
