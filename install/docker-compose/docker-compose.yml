@@ -31,6 +31,9 @@ services:
       - postman
     image: quay.io/microcks/microcks:latest
     container_name: microcks
+    volumes:
+      - ./config:/deployments/config
+      - ./keystore:/deployments/keystore
     ports:
       - "8080:8080"
       - "9090:9090"
