@@ -9,7 +9,7 @@
 
 echo "Generating certificates for '$HOSTNAME' ..."
 mkdir keystore
-docker run -v $PWD/keystore:/certs -e SERVER_HOSTNAMES="ec2-18-183-254-98.ap-northeast-1.compute.amazonaws.com" -it nmasse/mkcert:0.1
+docker run -v $PWD/keystore:/certs -e SERVER_HOSTNAMES="ec2-3-112-125-96.ap-northeast-1.compute.amazonaws.com" -it nmasse/mkcert:0.1
 mv ./keystore/server.crt ./keystore/tls.crt
 mv ./keystore/server.key ./keystore/tls.key
 mv ./keystore/server.p12 ./keystore/microcks.p12
