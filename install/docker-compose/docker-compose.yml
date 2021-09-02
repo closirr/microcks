@@ -16,7 +16,7 @@ services:
       KEYCLOAK_USER: "admin"
       KEYCLOAK_PASSWORD: "admin"
       KEYCLOAK_IMPORT: "/tmp/microcks-realm.json"
-      KEYCLOAK_FRONTEND_URL: "http://test-microcks-balancer-1800540662.us-east-1.elb.amazonaws.com:18080/auth"
+      KEYCLOAK_FRONTEND_URL: "http://http://microcks.nonprod.issuerview.ihsmarkit.com:18080/auth"
     volumes: 
       - "./keycloak-realm/microcks-realm-sample.json:/tmp/microcks-realm.json"
 
@@ -41,4 +41,4 @@ services:
       - TEST_CALLBACK_URL=http://microcks:8080
       - SERVICES_UPDATE_INTERVAL=0 0 0/2 * * *
       - KEYCLOAK_URL=http://keycloak:8080/auth
-      - KEYCLOAK_PUBLIC_URL=http://test-microcks-balancer-1800540662.us-east-1.elb.amazonaws.com:18080/auth
+      - KEYCLOAK_PUBLIC_URL=http://http://microcks.nonprod.issuerview.ihsmarkit.com:18080/auth
