@@ -3,16 +3,16 @@
 #HOSTNAME=$1
 #VERSION=$2
 
-#echo "Installing jq and docker-compose packages ..."
-#apt-get update
-#apt-get install -y jq docker docker-compose
+echo "Installing jq and docker-compose packages ..."
+apt-get update
+apt-get install -y jq docker docker-compose
 
-echo "Generating certificates for '$HOSTNAME' ..."
-mkdir keystore
-docker run -v $PWD/keystore:/certs -e SERVER_HOSTNAMES="ec2-3-112-125-96.ap-northeast-1.compute.amazonaws.com" -it nmasse/mkcert:0.1
-mv ./keystore/server.crt ./keystore/tls.crt
-mv ./keystore/server.key ./keystore/tls.key
-mv ./keystore/server.p12 ./keystore/microcks.p12
+#echo "Generating certificates for '$HOSTNAME' ..."
+#mkdir keystore
+#docker run -v $PWD/keystore:/certs -e SERVER_HOSTNAMES="ec2-3-112-125-96.ap-northeast-1.compute.amazonaws.com" -it nmasse/mkcert:0.1
+#mv ./keystore/server.crt ./keystore/tls.crt
+#mv ./keystore/server.key ./keystore/tls.key
+#mv ./keystore/server.p12 ./keystore/microcks.p12
 
 echo
 echo "Microcks is now installed with self-signed certificates"
