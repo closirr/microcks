@@ -87,7 +87,7 @@
         "+"
       ],
       "redirectUris": [
-        "http://test-microcks-balancer-1800540662.us-east-1.elb.amazonaws.com:8080/*"
+        "http://http://microcks.nonprod.issuerview.ihsmarkit.com/:8080/*"
       ],
       "fullScopeAllowed": false
     },
