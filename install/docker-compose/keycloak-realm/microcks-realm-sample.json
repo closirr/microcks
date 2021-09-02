@@ -87,7 +87,7 @@
         "+"
       ],
       "redirectUris": [
-        "http://http://microcks.nonprod.issuerview.ihsmarkit.com/:8080/*"
+        "http://http://microcks.nonprod.issuerview.ihsmarkit.com:8080/*"
       ],
       "fullScopeAllowed": false
     },
