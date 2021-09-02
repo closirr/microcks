@@ -87,7 +87,7 @@
         "+"
       ],
       "redirectUris": [
-        "http://ec2-3-112-125-96.ap-northeast-1.compute.amazonaws.com:8080/*"
+        "http://test-microcks-balancer-1800540662.us-east-1.elb.amazonaws.com:8080/*"
       ],
       "fullScopeAllowed": false
     },
