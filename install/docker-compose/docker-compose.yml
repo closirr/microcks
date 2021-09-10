@@ -12,11 +12,12 @@ services:
     container_name: microcks-sso
     ports:
       - "18080:8080"
+      - "8443:8443"
     environment:
       KEYCLOAK_USER: "admin"
       KEYCLOAK_PASSWORD: "admin"
       KEYCLOAK_IMPORT: "/tmp/microcks-realm.json"
-      KEYCLOAK_FRONTEND_URL: "http://microcks-balancer-584600261.us-east-1.elb.amazonaws.com:18080/auth"
+      KEYCLOAK_FRONTEND_URL: "https://microcks-balancer-584600261.us-east-1.elb.amazonaws.com:8443/auth"
     volumes: 
       - "./keycloak-realm/microcks-realm-sample.json:/tmp/microcks-realm.json"
 
@@ -32,6 +33,7 @@ services:
     image: quay.io/microcks/microcks:latest
     container_name: microcks
     ports:
+      - "8778:8778"
       - "8080:8080"
       - "9090:9090"
     environment:
@@ -41,4 +43,4 @@ services:
       - TEST_CALLBACK_URL=http://microcks:8080
       - SERVICES_UPDATE_INTERVAL=0 0 0/2 * * *
       - KEYCLOAK_URL=http://keycloak:8080/auth
-      - KEYCLOAK_PUBLIC_URL=http://microcks-balancer-584600261.us-east-1.elb.amazonaws.com:18080/auth
+      - KEYCLOAK_PUBLIC_URL=https://microcks-balancer-584600261.us-east-1.elb.amazonaws.com:8443/auth
